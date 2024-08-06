@@ -17,3 +17,11 @@ TestNG Repository -> [Click here](https://mvnrepository.com/artifact/org.testng/
 ## **Useful knowledge**
 
 Pushing local project to github repository -> [Click here](https://gist.github.com/mindplace/b4b094157d7a3be6afd2c96370d39fad)
+
+## **Codes**
+
+To start the device-farm via server-config on E:/KnowledgeBase/
+
+<table><tr><td>appium server -ka 800 --use-plugins=device-farm --config E:/KnowledgeBase/server-config.json -pa /wd/hub</td></tr></table>
+
+

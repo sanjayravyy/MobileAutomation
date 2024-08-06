@@ -4,7 +4,6 @@ package com.placeholder.exceptions;
 public interface FailAssertion {
 
     /**
-     *
      * @param message the message to fail with
      */
     void fail(String message);

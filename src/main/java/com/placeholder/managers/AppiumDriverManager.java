@@ -10,9 +10,7 @@ public class AppiumDriverManager {
 
     private static final ThreadLocal<AppiumDriver> appiumDriver = new ThreadLocal<>();
 
-    public static AppiumDriver getDriver(){
+    public static AppiumDriver getDriver() {
         return appiumDriver.get();
     }
-
-
 }

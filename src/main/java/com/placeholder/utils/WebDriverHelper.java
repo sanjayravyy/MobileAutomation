@@ -34,7 +34,7 @@ public class WebDriverHelper {
      */
     public Point getCenter(WebElement element) {
         Point cornet = element.getLocation();
-        Dimension size= element.getSize();
+        Dimension size = element.getSize();
         return new Point(cornet.getX() + size.getWidth() / 2, cornet.getY() + size.getHeight() / 2);
     }
 
@@ -43,7 +43,7 @@ public class WebDriverHelper {
      *
      * @param element element
      */
-    public void longPress(WebElement element){
+    public void longPress(WebElement element) {
         LOGGER.info("Long pressing element!");
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         Sequence sequence = new Sequence(finger, 1);
@@ -58,10 +58,10 @@ public class WebDriverHelper {
      *
      * @param startX startX
      * @param startY startY
-     * @param endX endX
-     * @param endY endY
+     * @param endX   endX
+     * @param endY   endY
      */
-    public void swipe(int startX, int startY, int endX, int endY){
+    public void swipe(int startX, int startY, int endX, int endY) {
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         Sequence sequence = new Sequence(finger, 1);
         sequence.addAction(finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.viewport(), startX, startY));
@@ -73,13 +73,12 @@ public class WebDriverHelper {
     }
 
     /**
-     *
      * @param startX startX
      * @param startY startY
-     * @param endX endX
-     * @param endY endY
+     * @param endX   endX
+     * @param endY   endY
      */
-    public void doSwipe(double startX, double startY, double endX, double endY){
+    public void doSwipe(double startX, double startY, double endX, double endY) {
         int screenWidth = AppiumDriverManager.getDriver().manage().window().getSize().width;
         int screenHeight = AppiumDriverManager.getDriver().manage().window().getSize().height;
         LOGGER.info("Doing swipe!");
@@ -92,8 +91,8 @@ public class WebDriverHelper {
      *
      * @param direction direction
      */
-    public void doSwipe(Direction direction){
-        switch (direction){
+    public void doSwipe(Direction direction) {
+        switch (direction) {
             case UP:
                 doSwipe(0.5, 0.9, 0.5, 0.1);
                 break;
@@ -101,10 +100,10 @@ public class WebDriverHelper {
                 doSwipe(0.5, 0.5, 0.5, 0.9);
                 break;
             case RIGHT:
-                doSwipe(0.05,0.5,0.95,0.5);
+                doSwipe(0.05, 0.5, 0.95, 0.5);
                 break;
             case LEFT:
-                doSwipe(0.95,0.5,0.05,0.5);
+                doSwipe(0.95, 0.5, 0.05, 0.5);
                 break;
             default:
                 ExceptionController.hookFail("Invalid direction -> " + direction);

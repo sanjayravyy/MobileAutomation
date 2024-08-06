@@ -10,13 +10,13 @@ public class ExceptionController {
     private static FailAssertion mThrower = null;
 
     /**
-     *
      * @param thrower the thrower to use
      */
-    public static void regHookFail(FailAssertion thrower) { mThrower = thrower; }
+    public static void regHookFail(FailAssertion thrower) {
+        mThrower = thrower;
+    }
 
     /**
-     *
      * @param message the message to fail with
      */
     public static void hookFail(String message) {
@@ -25,10 +25,11 @@ public class ExceptionController {
     }
 
     /**
-     *
      * @param message the message to fail with
-     * @param error the error to fail with
+     * @param error   the error to fail with
      */
-    public static void hookFail(String message, Exception error) { hookFail(message + "\n" + error.getMessage()); }
+    public static void hookFail(String message, Exception error) {
+        hookFail(message + "\n" + error.getMessage());
+    }
 
 }

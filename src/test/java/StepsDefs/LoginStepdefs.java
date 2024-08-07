@@ -14,7 +14,7 @@ public class LoginStepdefs extends PageObjectHelper implements En {
     public LoginStepdefs() {
 
 
-        @Given("^I enter email address as (.*)$",(String email) -> {
+        @Given("^I enter email address as (.*)$", (String email) -> {
             LOGGER.info("Entering email address: {}", email);
             LoginPageInterface loginView = driverSelector().getLoginView();
 

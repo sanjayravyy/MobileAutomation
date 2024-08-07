@@ -1,0 +1,18 @@
+{
+  "android": {
+    "platformName": "android",
+    "appium:automationName": "uiAutomator2",
+    "appium:uiautomator2ServerInstallTimeout": 20000,
+    "appium:adbExecTimeout": 20000,
+    "appium:newCommandTimeout": 100,
+    "appium:deviceName": "Pixel 7",
+    "appium:app": "\\Users\\imsaa\\IdeaProjects\\PlaceholderProject\\src\\main\\resources\\ApiDemos-debug.apk",
+    "appium:appWaitDuration": 30000,
+    "appium:autoLaunch": false,
+    "appium:systemPort": 4723,
+    "appium:appPackage": "com.test.app",
+    "appium:appActivity": ".MainActivity",
+    "appium:clearDeviceLogsOnStart": true,
+    "appium:clearSystemFiles": true
+  }
+}

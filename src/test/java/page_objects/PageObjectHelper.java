@@ -15,7 +15,7 @@ public class PageObjectHelper {
     private static final ThreadLocal<CommonPageInterface> commonPageThreadLocal = new ThreadLocal<>();
 
 
-    public static void setCommonPage(String platform){
+    public static void setCommonPage(String platform) {
         switch (platform) {
             case "android":
                 commonPageThreadLocal.set(new AndroidCommonPage((AndroidDriver) AppiumDriverManager.getDriver()));
@@ -28,7 +28,7 @@ public class PageObjectHelper {
     }
 
     public CommonPageInterface driverSelector() {
-        if(commonPageThreadLocal.get() == null) {
+        if (commonPageThreadLocal.get() == null) {
             setCommonPage(CapabilityManager);
         }
     }

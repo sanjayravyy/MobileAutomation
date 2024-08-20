@@ -23,7 +23,7 @@ public class AppiumServerManager {
         options.setDeviceName("Pixel 7_Pro");
 
         //Set App
-        options.setApp("\\Users\\imsaa\\IdeaProjects\\PlaceholderProject\\src\\main\\resources\\ApiDemos-debug.apk");
+        options.setApp("\\Users\\imsaa\\IdeaProjects\\MobileAutomation\\demoApp.apk");
 
         //Set Android driver
         AndroidDriver driver = new AndroidDriver(new URI("http://127.0.0.1:4725/wd/hub").toURL(), options);

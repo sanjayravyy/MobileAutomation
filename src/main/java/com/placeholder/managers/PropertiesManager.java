@@ -1,5 +1,7 @@
 package com.placeholder.managers;
 
+
+import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
@@ -16,7 +18,7 @@ public class PropertiesManager {
      */
     public PropertiesManager() {
         properties = new Properties();
-        String propertyFile = System.getenv("ENVIRONMENT").toLowerCase() + ".properties";
+        String propertyFile = "src/main/resources/project_properties/" + System.getenv("ENVIRONMENT").toLowerCase() + ".properties";
         try {
             properties.load(Files.newInputStream(Paths.get(propertyFile)));
         } catch (Exception e) {
@@ -42,7 +44,6 @@ public class PropertiesManager {
     }
 
     /**
-     *
      * @param key the key
      * @return the property
      */
@@ -51,8 +52,7 @@ public class PropertiesManager {
     }
 
     /**
-     *
-     * @param key the key
+     * @param key   the key
      * @param value the property
      */
     public void setProperty(String key, String value) {

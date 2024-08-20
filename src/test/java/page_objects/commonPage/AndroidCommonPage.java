@@ -2,16 +2,19 @@ package page_objects.commonPage;
 
 import com.placeholder.utils.AndroidHelper;
 import com.placeholder.utils.Waits;
+import interfaces.CommonPageInterface;
+import interfaces.LoginPageInterface;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import page_objects.loginPage.AndroidLoginPage;
 
 import java.time.Duration;
 
-public class AndroidCommonPage {
+public class AndroidCommonPage implements CommonPageInterface {
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(AndroidCommonPage.class.getName());
 
@@ -34,5 +37,10 @@ public class AndroidCommonPage {
             LOGGER.warn("Error initializing class {}", getClass().getSimpleName(), e);
         }
         LOGGER.info("Initializing {} for session:{}", getClass().getSimpleName(), driver.getSessionId());
+    }
+
+    @Override
+    public LoginPageInterface initLoginPageView() {
+        return new AndroidLoginPage(driver);
     }
 }

@@ -1,5 +1,6 @@
 package page_objects;
 
+import com.placeholder.capabilities.CapabilityManager;
 import com.placeholder.exceptions.ExceptionController;
 import com.placeholder.managers.AppiumDriverManager;
 import interfaces.CommonPageInterface;
@@ -18,7 +19,7 @@ public class PageObjectHelper {
     public static void setCommonPage(String platform) {
         switch (platform) {
             case "android":
-                commonPageThreadLocal.set(new AndroidCommonPage((AndroidDriver) AppiumDriverManager.getDriver()));
+                commonPageThreadLocal.set((CommonPageInterface) new AndroidCommonPage((AndroidDriver) AppiumDriverManager.getDriver()));
                 break;
             case "ios":
                 ExceptionController.hookFail("Not supported yet");
@@ -27,9 +28,10 @@ public class PageObjectHelper {
         }
     }
 
-    public CommonPageInterface driverSelector() {
+    public static CommonPageInterface driverSelector() {
         if (commonPageThreadLocal.get() == null) {
-            setCommonPage(CapabilityManager);
+            setCommonPage(CapabilityManager.getInstance().getPlatform());
         }
+        return commonPageThreadLocal.get();
     }
 }

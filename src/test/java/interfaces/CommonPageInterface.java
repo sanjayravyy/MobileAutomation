@@ -7,4 +7,7 @@ public interface CommonPageInterface {
         UP,
         BOTTOM
     }
+
+    LoginPageInterface initLoginPageView();
+
 }

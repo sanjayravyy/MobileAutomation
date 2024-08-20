@@ -1,6 +1,9 @@
 package com.placeholder.capabilities;
 
 import com.placeholder.managers.PropertiesManager;
+import com.placeholder.utils.JsonParser;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class CapabilityManager {
 
@@ -8,8 +11,15 @@ public class CapabilityManager {
 
     private final String capabilityPath;
 
+    private final JSONObject capabiliies;
+
     private CapabilityManager() {
         capabilityPath = getCapabilityLocation();
+        com.placeholder.utils.JsonParser jsonParser = new JsonParser(capabilityPath);
+        capabiliies = jsonParser.getObjectFromJSON();
+
+
+
 
     }
 
@@ -31,8 +41,46 @@ public class CapabilityManager {
     /**
      * @return the capability environment
      */
-    public String getEnvironment(){
+    public String getEnvironment() {
         return System.getenv("ENVIRONMENT").toLowerCase();
     }
 
+    public boolean isAndroid(){
+        return getPlatform().equals("android");
+    }
+
+    /**
+     * @param key the capability key
+     * @return the capability
+     */
+    public JSONObject getCapabilityObjectFromKey(String key){
+        boolean hasKey = capabiliies.has(key);
+        if(hasKey){
+            return (JSONObject) capabiliies.get(key);
+        }
+        return null;
+    }
+
+    /**
+     * @param key the capability key
+     * @return the capability
+     */
+    public JSONArray getCapabilityArrayFromKey(String key) {
+        return capabiliies.getJSONArray(key);
+    }
+
+    /**
+     *
+     * @return app path
+     */
+    public String appPath(){
+        return System.getProperty("user.dir") + "/demoApp.apk";
+    }
+
+    public static CapabilityManager getInstance() {
+        if(instance == null){
+            instance = new CapabilityManager();
+        }
+        return instance;
+    }
 }

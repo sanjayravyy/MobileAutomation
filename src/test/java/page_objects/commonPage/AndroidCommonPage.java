@@ -36,7 +36,7 @@ public class AndroidCommonPage implements CommonPageInterface {
         } catch (Exception e) {
             LOGGER.warn("Error initializing class {}", getClass().getSimpleName(), e);
         }
-        LOGGER.info("Initializing {} for session:{}", getClass().getSimpleName(), driver.getSessionId());
+        LOGGER.info("Initializing {} for session!", getClass().getSimpleName());
     }
 
     @Override

@@ -19,8 +19,6 @@ public class CapabilityManager {
         capabiliies = jsonParser.getObjectFromJSON();
 
 
-
-
     }
 
     /**
@@ -45,7 +43,7 @@ public class CapabilityManager {
         return System.getenv("ENVIRONMENT").toLowerCase();
     }
 
-    public boolean isAndroid(){
+    public boolean isAndroid() {
         return getPlatform().equals("android");
     }
 
@@ -53,9 +51,9 @@ public class CapabilityManager {
      * @param key the capability key
      * @return the capability
      */
-    public JSONObject getCapabilityObjectFromKey(String key){
+    public JSONObject getCapabilityObjectFromKey(String key) {
         boolean hasKey = capabiliies.has(key);
-        if(hasKey){
+        if (hasKey) {
             return (JSONObject) capabiliies.get(key);
         }
         return null;
@@ -70,15 +68,14 @@ public class CapabilityManager {
     }
 
     /**
-     *
      * @return app path
      */
-    public String appPath(){
+    public String appPath() {
         return System.getProperty("user.dir") + "/demoApp.apk";
     }
 
     public static CapabilityManager getInstance() {
-        if(instance == null){
+        if (instance == null) {
             instance = new CapabilityManager();
         }
         return instance;

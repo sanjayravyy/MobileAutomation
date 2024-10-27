@@ -22,6 +22,5 @@ public class AndroidLoginPage extends AndroidCommonPage implements LoginPageInte
     @Override
     public void enterUsername(String username) {
         LOGGER.info("Entering username");
-        loginEmailTextField.sendKeys(username);
     }
 }

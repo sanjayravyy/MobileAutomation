@@ -1,6 +1,7 @@
 package com.placeholder.Runner;
 
-import com.placeholder.Hooks.Hooks;
+
+import Hooks.Hooks;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = {"StepsDefs"},
+        glue = {"StepsDefs", "Hooks"},
         features = {"src/test/resources"},
         plugin = {"pretty", "json:target/cucumber.json"},
         monochrome = true,

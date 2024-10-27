@@ -1,5 +1,6 @@
-package com.placeholder.Hooks;
+package Hooks;
 
+import com.placeholder.managers.AppiumServerManager;
 import com.placeholder.managers.ScenarioManager;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
@@ -7,10 +8,12 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import page_objects.PageObjectHelper;
 
-public class Hooks {
+public class Hooks extends PageObjectHelper {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Hooks.class.getName());
+
 
     @BeforeAll
     public static void setUpClass() {
@@ -26,10 +29,13 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
-        LOGGER.info("\n-------------------------------- Scenario Start --------------------------------\n");
+        loadConfigFiles();
+        LOGGER.info("\n-------------------------------- Scenario Start ------------------------ c--------\n");
         LOGGER.info("\n******* Scenario: {} started! *******\n", scenario.getName());
-        ScenarioManager.getScenario(scenario);
+        ScenarioManager.setScenario(scenario);
         LOGGER.info("Starting appium server instance...");
+        AppiumServerManager.startAppiumServer(scenario.getName());
+
 
     }
 }

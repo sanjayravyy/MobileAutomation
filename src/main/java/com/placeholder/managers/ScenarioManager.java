@@ -28,9 +28,9 @@ public final class ScenarioManager {
     }
 
     /**
-     * @param scenario the current scenario
+     * Return scenario manager instance
      */
-    public static Scenario getScenario(Scenario scenario) {
+    public static Scenario getScenario() {
         return currentScenario.get();
     }
 

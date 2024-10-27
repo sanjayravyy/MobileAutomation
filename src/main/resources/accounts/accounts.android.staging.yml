@@ -1,0 +1,8 @@
+users:
+  sanjay_test:
+    name: "Sanjay Test"
+    email: "imsaanjay@gmail.com"
+    lines:
+      one:
+        number: "+33766731011"
+        name: "Sanjay QA"

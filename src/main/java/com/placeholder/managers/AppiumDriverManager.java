@@ -13,4 +13,10 @@ public class AppiumDriverManager {
     public static AppiumDriver getDriver() {
         return appiumDriver.get();
     }
+
+    // private static final ThreadLocal<DesiredCapabilityBuilder> desiredCapabilityBuilder = new ThreadLocal<>();
+
+    public static void startAppiumDriverInstance() {
+
+    }
 }

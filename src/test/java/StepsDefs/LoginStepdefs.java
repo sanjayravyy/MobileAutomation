@@ -1,5 +1,7 @@
 package StepsDefs;
 
+import com.placeholder.TestData.config.Account;
+import com.placeholder.TestData.config.TestConstants;
 import interfaces.LoginPageInterface;
 import io.cucumber.java8.En;
 import org.slf4j.Logger;
@@ -12,10 +14,18 @@ public class LoginStepdefs extends PageObjectHelper implements En {
 
     public LoginStepdefs() {
 
-    Given("^I enter email address as (.*)$", (String email) -> {
-        LOGGER.info("Entering email address: {}", email);
-        LoginPageInterface loginView = driverSelector().initLoginPageView();
-        loginView.enterUsername(email);
-    });
+        Given("^I enter email address of ([A-Z_]+)$", (TestConstants.Groups account) -> {
 
-}}
+            LOGGER.info("Entering email address of account: {}", account);
+            Account loginAccount = configuration.users.getUser(account.getValue());
+
+            //Getting email address
+            String email = loginAccount.getEmail();
+
+            //Entering email address on login page
+            LoginPageInterface loginView = driverSelector().initLoginPageView();
+            loginView.enterUsername(email);
+        });
+
+    }
+}

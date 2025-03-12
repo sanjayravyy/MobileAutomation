@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Mobile Automation Suite">
     <test name="Cucumber Tests">
+        <parameter name="cucumber.filter.tags" value="${cucumber.filter.tags}"/>
         <classes>
             <class name="com.mobileautomation.runners.TestRunner"/>
         </classes>

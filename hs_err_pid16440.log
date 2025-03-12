@@ -1,0 +1,233 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=16440, tid=1980
+#
+# JRE version:  (21.0.5+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0.5+9-LTS-239, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: C:\Users\imsaa\AppData\Local\Temp\surefire17947874591930093074\surefirebooter-20250312042627853_3.jar C:\Users\imsaa\AppData\Local\Temp\surefire17947874591930093074 2025-03-12T04-26-27_752-jvmRun1 surefire-20250312042627853_1tmp surefire_0-20250312042627853_2tmp
+
+Host: Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz, 12 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.5015)
+Time: Wed Mar 12 04:26:27 2025 India Standard Time elapsed time: 0.008219 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000021f19fc2eb0):  JavaThread "Unknown thread" [_thread_in_vm, id=1980, stack(0x00000062beb00000,0x00000062bec00000) (1024K)]
+
+Stack: [0x00000062beb00000,0x00000062bec00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ca289]
+V  [jvm.dll+0x854a51]
+V  [jvm.dll+0x856f7e]
+V  [jvm.dll+0x857653]
+V  [jvm.dll+0x27dd26]
+V  [jvm.dll+0x6c6a25]
+V  [jvm.dll+0x6bb5aa]
+V  [jvm.dll+0x35359a]
+V  [jvm.dll+0x35b1f6]
+V  [jvm.dll+0x3adade]
+V  [jvm.dll+0x3add88]
+V  [jvm.dll+0x3278fc]
+V  [jvm.dll+0x32845b]
+V  [jvm.dll+0x81de19]
+V  [jvm.dll+0x3ba7c1]
+V  [jvm.dll+0x807168]
+V  [jvm.dll+0x44f96e]
+V  [jvm.dll+0x451561]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1259d]
+C  [ntdll.dll+0x5af38]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff80763ac08, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000021f19fb1a00 WorkerThread "GC Thread#0"                     [id=16640, stack(0x00000062bec00000,0x00000062bed00000) (1024K)]
+  0x0000021f1c242dc0 ConcurrentGCThread "G1 Main Marker"            [id=17596, stack(0x00000062bed00000,0x00000062bee00000) (1024K)]
+  0x0000021f19fb24e0 WorkerThread "G1 Conc#0"                       [id=20900, stack(0x00000062bee00000,0x00000062bef00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff806daa087]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff8076abf98] Heap_lock - owner thread: 0x0000021f19fc2eb0
+
+Heap address: 0x0000000702a00000, size: 4054 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000702a00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff807193259]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.005 Loaded shared library C:\Automation\Java SDK\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7ca670000 - 0x00007ff7ca680000 	C:\Automation\Java SDK\bin\java.exe
+0x00007ff893290000 - 0x00007ff8934a7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff891f10000 - 0x00007ff891fd4000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff890a50000 - 0x00007ff890e23000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff8905e0000 - 0x00007ff8906f1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff87d000000 - 0x00007ff87d01b000 	C:\Automation\Java SDK\bin\VCRUNTIME140.dll
+0x00007ff876e80000 - 0x00007ff876e99000 	C:\Automation\Java SDK\bin\jli.dll
+0x00007ff891ac0000 - 0x00007ff891b71000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff892530000 - 0x00007ff8925d7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff8931a0000 - 0x00007ff893247000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff8903a0000 - 0x00007ff8903c8000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff890f30000 - 0x00007ff891044000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff892fd0000 - 0x00007ff893181000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff8905b0000 - 0x00007ff8905d6000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff873c40000 - 0x00007ff873eda000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.5015_none_270d78617387d696\COMCTL32.dll
+0x00007ff891b80000 - 0x00007ff891ba9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff8903d0000 - 0x00007ff8904eb000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff890700000 - 0x00007ff89079a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff889710000 - 0x00007ff88971a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff892700000 - 0x00007ff892731000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff88b270000 - 0x00007ff88b27c000 	C:\Automation\Java SDK\bin\vcruntime140_1.dll
+0x00007ff875f30000 - 0x00007ff875fbe000 	C:\Automation\Java SDK\bin\msvcp140.dll
+0x00007ff806a70000 - 0x00007ff807788000 	C:\Automation\Java SDK\bin\server\jvm.dll
+0x00007ff891a40000 - 0x00007ff891ab1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff88f380000 - 0x00007ff88f3cd000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff88a010000 - 0x00007ff88a044000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff88f360000 - 0x00007ff88f373000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff88f4d0000 - 0x00007ff88f4e8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff87dd60000 - 0x00007ff87dd6a000 	C:\Automation\Java SDK\bin\jimage.dll
+0x00007ff88dd60000 - 0x00007ff88df92000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff892100000 - 0x00007ff892492000 	C:\WINDOWS\System32\combase.dll
+0x00007ff891960000 - 0x00007ff891a37000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff8739c0000 - 0x00007ff8739f2000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff890eb0000 - 0x00007ff890f2b000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff87af70000 - 0x00007ff87af8f000 	C:\Automation\Java SDK\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Automation\Java SDK\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.5015_none_270d78617387d696;C:\Automation\Java SDK\bin\server
+
+VM Arguments:
+java_command: C:\Users\imsaa\AppData\Local\Temp\surefire17947874591930093074\surefirebooter-20250312042627853_3.jar C:\Users\imsaa\AppData\Local\Temp\surefire17947874591930093074 2025-03-12T04-26-27_752-jvmRun1 surefire-20250312042627853_1tmp surefire_0-20250312042627853_2tmp
+java_class_path (initial): C:\Users\imsaa\AppData\Local\Temp\surefire17947874591930093074\surefirebooter-20250312042627853_3.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4250927104                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4250927104                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Automation\Java SDK
+PATH=c:\Automation\cursor\resources\app\bin;C:\Program Files\Google\Chrome\Application;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Automation\NodeJS\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Users\imsaa\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\imsaa\AppData\Local\Programs\Python\Python36\;C:\Users\imsaa\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\imsaa\AppData\Local\Programs\Python\Python37\;C:\Users\imsaa\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\imsaa\AppData\Local\Programs\Python\Python39\;C:\Users\imsaa\anaconda3;C:\Users\imsaa\anaconda3\Library\mingw-w64\bin;C:\Users\imsaa\anaconda3\Library\usr\bin;C:\Users\imsaa\anaconda3\Library\b;c:\Automation\cursor\resources\app\bin;C:\Automation\Git\cmd;\Users\imsaa\AppData\Local\Android\Sdk\platform-tools;C:\Automation\Maven\apache-maven-3.9.9\bin;C:\Users\imsaa\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\imsaa\AppData\Local\Programs\Python\Python36\;C:\Users\imsaa\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\imsaa\AppData\Local\Programs\Python\Python37\;C:\Users\imsaa\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\imsaa\AppData\Local\Programs\Python\Python39\;C:\Users\imsaa\anaconda3;C:\Users\imsaa\anaconda3\Library\mingw-w64\bin;C:\Users\imsaa\anaconda3\Library\usr\bin;C:\Users\imsaa\anaconda3\Library\bin;C:\Users\imsaa\anaconda3\Scripts;C:\Users\imsaa\AppData\Local\Microsoft\WindowsApps;C:\Users\imsaa\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\imsaa\AppData\Roaming\npm;C:\Program Files\Azure Data Studio\bin;C:\Automation\cursor\resources\app\bin;C:\Users\imsaa\AppData\Local\gitkraken\bin
+USERNAME=imsaa
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+TMP=C:\Users\imsaa\AppData\Local\Temp
+TEMP=C:\Users\imsaa\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.5015)
+OS uptime: 0 days 2:39 hours
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 165 stepping 2 microcode 0xea, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, rdtscp, f16c, pku
+Processor Information for all 12 processors :
+  Max Mhz: 2592, Current Mhz: 2592, Mhz Limit: 2592
+
+Memory: 4k page, system-wide physical 16215M (4226M free)
+TotalPageFile size 16215M (AvailPageFile size 244M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 64M, peak: 318M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0.5+9-LTS-239) for windows-amd64 JRE (21.0.5+9-LTS-239), built on 2024-09-30T05:17:38Z by "mach5one" with MS VC++ 17.6 (VS2022)
+
+END.

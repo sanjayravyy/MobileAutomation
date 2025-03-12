@@ -1,0 +1,21 @@
+{
+    "platformName": "Android",
+    "automationName": "UiAutomator2",
+    "deviceName": "Android Device",
+    "app": "${workspaceFolder}/ApiDemos-debug.apk",
+    "appPackage": "io.appium.android.apis",
+    "appActivity": ".ApiDemos",
+    "noReset": false,
+    "fullReset": true,
+    "newCommandTimeout": 300,
+    "autoGrantPermissions": true,
+    "systemPort": 8201,
+    "adbExecTimeout": 120000,
+    "uiautomator2ServerLaunchTimeout": 60000,
+    "uiautomator2ServerInstallTimeout": 60000,
+    "androidDeviceReadyTimeout": 60000,
+    "settings": {
+        "ignoreUnimportantViews": true,
+        "allowInvisibleElements": false
+    }
+} 
